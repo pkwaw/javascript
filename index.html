@@ -6,18 +6,34 @@
         <link rel = "stylesheet" href="main.css">
     </head>
     <body>
-        <div class="alert-box" id="alert">알림창임
-            <button onclick="document.getElementById('alert').style.display='none';">닫기</button>
+        <div class="alert-box" id="alert">
+            <p id="title">알림창임</p>
+            <button id="close">닫기</button>
         </div>
-        <button onclick="alertOpen()">버튼</button>
+        <button onclick="idAlert();">버튼1</button>
+        <button onclick="pwAlert();">버튼2</button>
         
         <script>
-            function alertOpen(){
-                document.getElementById('alert').style.display='block';
+            function idAlert(){
+                document.getElementById('title').innerHTML = '아이디입력';
+                document.getElementById('alert').style.display = 'block';
             }
-            function alertOut(){
+
+            function pwAlert(){
+                document.getElementById('title').innerHTML = '비번입력';
+                document.getElementById('alert').style.display = 'block';
+            }
+            
+
+            
+            function alert(param){
+                document.getElementById('alert').style.display='param';
+            }
+
+            document.getElementById('close').addEventListener('click', function(){
                 document.getElementById('alert').style.display='none';
-            }
+            });
+
         </script>
     </body>
 </html>
